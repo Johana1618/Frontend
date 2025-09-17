@@ -1,0 +1,253 @@
+/* Reset */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+/* Header y Navbar */
+.navbar {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo img {
+    width: 100px;
+    height: 57px;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #7c3aed;
+}
+
+/* Service Detail Section */
+.service-detail-section {
+    background: #f5f5f5;
+    padding: 60px 20px;
+    min-height: calc(100vh - 160px);
+}
+
+.service-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+}
+
+/* Columna izquierda */
+.image-section {
+    background: rgba(182, 72, 178, 0.2); /* color con transparencia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px; 
+    width: 65%;
+    margin-top: 95px ;
+     margin-left: 250px;/* controlas directamente la altura */
+     
+  
+}
+.service-icon-large {
+    font-size: 200px;
+}
+/* Columna derecha */
+.text-section {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-title {
+    color: #5e17eb;
+    font-size: 2.5rem;
+    font-weight: bold;
+     margin: -20px 0 15px 0;
+    text-align: center; /* solo se controla el espacio del título */
+}
+
+.text-section {
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; /* añade espacio entre cada elemento dentro */
+}
+
+.promo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff4757, #ff3742);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 25px;
+    width: fit-content;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+}
+
+.fire-icon {
+    font-size: 16px;
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.7; }
+}
+
+.service-description {
+    color: black;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.service-info {
+    margin-bottom: 25px;
+}
+
+.availability {
+    color: #090909;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 30px;
+}
+
+/* Botón */
+.back-button {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: fit-content;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: #111; 
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-top {
+    margin-bottom: 10px;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #666;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #f6f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .service-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-section {
+        min-height: 300px;
+    }
+    
+    .laptop-container {
+    width: 200px;
+    height: 150px;
+    position: relative;
+}
+    .text-section {
+        padding: 30px 25px;
+    }
+    
+    .service-title {
+        font-size: 2rem;
+    }
+    
+    .price {
+        font-size: 1.7rem;
+    }
+    
+    .service-detail-section {
+        padding: 40px 15px;
+    }
+}

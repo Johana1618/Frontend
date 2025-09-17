@@ -1,0 +1,378 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* === HEADER Y NAVBAR === */
+.navbar {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo img {
+    width: 100px;
+    height: 57px;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #7c3aed;
+}
+
+.nav-menu li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo específico para el li con el ícono grande */
+.nav-menu .large-icon {
+    font-size: 1.7rem; /* Hace el emoji más grande */
+    color: #1800ad; /* Color morado solicitado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px; /* Espaciado horizontal */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: -30px;
+}
+
+/* === MAIN CONTENT === */
+.main-content {
+    min-height: calc(100vh - 80px);
+    padding: 2rem 0;
+    margin-top: 80px; /* Espaciado para navbar fijo */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* === TOP BAR === */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.search-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 50px 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #7c3aed;
+}
+
+.search-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.create-btn {
+    background: #ffffff;              /* Fondo blanco */
+    color: #5500ff;                   /* Texto morado */
+    border: 2px solid #5500ff;        /* Borde morado */
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-weight: bold; 
+}
+
+/* Efecto hover */
+.create-btn:hover {
+    background: #5500ff;   /* Se pinta de morado */
+    color: #ffffff;        /* Texto en blanco */
+}
+
+/* === TABLE CONTAINER === */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+}
+
+/* === SERVICES TABLE === */
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.services-table th,
+.services-table td {
+    padding: 16px 12px;
+    border: 2px solid #ceb9f8; /* Aplica borde en todos los lados */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.services-table th {
+    background: linear-gradient(#decdff);
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.services-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.services-table tbody tr:hover {
+    background-color: #f0edff;
+}
+
+.services-table tbody tr:hover td {
+    background-color: #f0edff;
+}
+
+/* === SERVICE ICONS === */
+.service-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+.service-icon.laptop { background-color: rgba(151, 107, 239, 0.6)}
+.service-icon.mobile { background-color: rgba(151, 107, 239, 0.6)}
+.service-icon.cloud { background-color: rgba(151, 107, 239, 0.6)}
+.service-icon.security { background-color: rgba(151, 107, 239, 0.6) }
+.service-icon.analytics { background-color: rgba(151, 107, 239, 0.6)}
+.service-icon.ai { background-color: rgba(151, 107, 239, 0.6)}
+.service-icon.ecommerce { background-color: rgba(151, 107, 239, 0.6) }
+.service-icon.backup { background-color: rgba(151, 107, 239, 0.6)}
+
+/* === TOGGLE SWITCH === */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Estado activo cuando el input está checked */
+.toggle input:checked + .slider {
+    background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+}
+
+.toggle input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Hover effect */
+.slider:hover {
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* === ACTION BUTTONS === */
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.action-btn {
+    background: none;
+    border: 2px solid transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn.edit:hover {
+    background-color: #decdff;
+    border-color: hsl(260, 88%, 75%);
+}
+
+.action-btn.delete:hover {
+    background-color: #decdff;
+    border-color: hsl(260, 88%, 75%);
+}
+
+/* === CONTADOR DE SERVICIOS === */
+.services-counter {
+    padding: 15px 0;
+    text-align: left; /* Alineado a la derecha */
+    border-top: 1px solid #e0e0e0; /* Línea sutil arriba */
+    
+    
+
+}
+
+.counter-text {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .search-container {
+        max-width: none;
+        width: 100%;
+    }
+    
+    .services-table {
+        font-size: 0.9rem;
+    }
+    
+    .services-table th,
+    .services-table td {
+        padding: 12px 8px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .logo img {
+        width: 80px;
+        height: 45px;
+    }
+
+    .nav-menu .large-icon {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    /* Responsive para contador de servicios */
+    .services-counter {
+       background: transparent !important;
+        
+    }
+    
+    .counter-text {
+        font-size: 13px;
+    }
+}

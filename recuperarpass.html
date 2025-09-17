@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalCore Solutions</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+
+   <nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="images/logo.png" alt="DigitalCore Logo">
+            DigitalCore Solutions
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicio.html">Servicios</a></li>
+        </ul>
+    </div>
+  </nav>
+
+ <div class="login-container">
+        <div class="login-box">
+            <div class="avatar-container">
+                <div class="avatar">
+                    👤
+                </div>
+            </div>
+            <br>
+            
+            <h1 class="login-title">Recuperar contraseña</h1>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="usuario" class="form-label">Nueva contraseña</label>
+                    <input 
+                        type="password" 
+                        id="usuario" 
+                        name="usuario" 
+                        class="form-input" 
+                        placeholder="Ingresa su nueva contraseña"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="contraseña" class="form-label">Confirmar nueva contraseña</label>
+                    <input 
+                        type="password" 
+                        id="contraseña" 
+                        name="contraseña" 
+                        class="form-input" 
+                        placeholder="Ingresa nuevamente su contraseña"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="login-button">
+                    Cambiar contraseña
+                </button>
+                 <a href="login.html" class="forgot-password">
+                    Volver al inicio de sesión
+                </a>
+                
+               
+            </form>
+        </div>
+    </div>
+<script src="js/recuperarPass.js"></script>
+    
+</body>
+</html>
