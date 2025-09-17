@@ -23,11 +23,11 @@ body {
 }
 
 .nav-container {
-
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* ayuda en móviles */
 }
 
 .logo {
@@ -40,7 +40,7 @@ body {
 
 .logo img {
     width: 100px;
-    height: 57px;
+    height: auto;
     margin-right: 10px;
 }
 
@@ -48,6 +48,8 @@ body {
     display: flex;
     list-style: none;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-menu a {
@@ -71,47 +73,42 @@ body {
 .service-detail {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 500px;
+    gap: 30px;
+    align-items: center;
 }
 
 /* Columna izquierda */
 .image-section {
-    background: rgba(182, 72, 178, 0.2); /* color con transparencia */
+    background: rgba(182, 72, 178, 0.2); 
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px; 
-    width: 65%;
-    margin-top: 95px ;
-     margin-left: 250px;/* controlas directamente la altura */
-     
-  
+    height: 100%;
+    min-height: 300px; 
+    width: 100%;
+    margin: 0 auto; /* centrado */
+    border-radius: 12px;
 }
+
 .service-icon-large {
-    font-size: 200px;
+    font-size: 180px;
 }
+
 /* Columna derecha */
 .text-section {
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 10px;
 }
 
 .service-title {
     color: #5e17eb;
     font-size: 2.5rem;
     font-weight: bold;
-     margin: -20px 0 15px 0;
-    text-align: center; /* solo se controla el espacio del título */
-}
-
-.text-section {
-    padding: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px; /* añade espacio entre cada elemento dentro */
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .promo-badge {
@@ -157,7 +154,7 @@ body {
 }
 
 .price {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: black;
     margin-bottom: 30px;
@@ -212,42 +209,54 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-menu {
-        gap: 20px;
-    }
-
+@media (max-width: 992px) {
     .service-detail {
         grid-template-columns: 1fr;
     }
-    
+
     .image-section {
-        min-height: 300px;
+        max-width: 90%;
+        margin: 0 auto;
     }
-    
-    .laptop-container {
-    width: 200px;
-    height: 150px;
-    position: relative;
-}
+
     .text-section {
-        padding: 30px 25px;
+        padding: 30px 20px;
     }
-    
+
     .service-title {
         font-size: 2rem;
     }
-    
+
     .price {
-        font-size: 1.7rem;
+        font-size: 1.1rem;
     }
-    
-    .service-detail-section {
-        padding: 40px 15px;
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        width: 80px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-icon-large {
+        font-size: 120px;
+    }
+
+    .service-title {
+        font-size: 1.6rem;
+    }
+
+    .promo-badge {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .back-button {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
