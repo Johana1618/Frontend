@@ -9,7 +9,7 @@ body {
     font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     padding-top: 80px;
-    background: #0f0229 ;
+    background: #0f0229;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -29,11 +29,11 @@ body {
 }
 
 .nav-container {
-
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* ayuda en móvil */
 }
 
 .logo {
@@ -46,8 +46,27 @@ body {
 
 .logo img {
     width: 100px;
-    height: 57px;
+    height: auto;
     margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #7c3aed;
 }
 
 /* Contenedor principal */
@@ -67,28 +86,10 @@ body {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
                 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     text-align: center;
+    animation: fadeInUp 0.6s ease-out;
 }
 
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #7c3aed;
-}
 /* Avatar */
-
-
 .avatar {
     width: 80px;
     height: 80px;
@@ -163,11 +164,9 @@ body {
     margin-top: 8px;
     margin-bottom: 20px;
     transition: all 0.2s ease-in-out;
-
 }
 
 .login-button:hover {
-    
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(167, 139, 250, 0.4);
 }
@@ -188,24 +187,34 @@ body {
 }
 
 .forgot-password:hover {
-   
     text-decoration: underline;
 }
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .login-box {
         padding: 32px 24px;
         margin: 20px;
     }
     
     .login-title {
-        font-size: 22px;
+        font-size: 20px;
     }
-    
+
     .avatar {
-        width: 9000px;
-        height: 7000px;
+        width: 60px;
+        height: 60px;
+        font-size: 150%;
     }
 }
 
@@ -219,8 +228,4 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.login-box {
-    animation: fadeInUp 0.6s ease-out;
 }
