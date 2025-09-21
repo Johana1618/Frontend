@@ -31,32 +31,29 @@
             <!-- Columna izquierda (imagen / laptop) -->
             <div class="image-section">
                 <div class="service-icon-large">
-                           <div class="icon">🌐</div>
+                    <div class="icon" id="imagen-detalle-servicio"></div>
                 </div>
             </div>
 
             <!-- Columna derecha (contenido sin contenedor) -->
             <div class="text-section">
-                <h1 class="service-title">E - commerce</h1>
-                 <br>
-                 <br>
-
+                <h1 class="service-title" id="titulo-detalle-servicio"></h1>
                 
-                <p class="service-description">
-                Creación de tiendas online completas, integración de pasarelas de pago, <br>
-                gestión de inventarios, marketing digital para ventas y optimización de <br>
-                 conversiones.
-                </p>
+
+                <div class="promo-badge" id="promocion-detalle-servicio">
+                    <span class="fire-icon">🔥</span>
+                    En promoción
+                </div>
+
+                <p class="service-description" id="descripcion-detalle-servicio"></p>
 
                 <div class="service-info">
                     <p class="availability">
-                        Cantidad disponible: <span class="availability-count">7 servicios</span>
+                        Cantidad disponible: <span class="availability-count" id="cantidad-detalle-servicio"></span>
                     </p>
                 </div>
 
-                <div class="price">
-                    $3,500,000 COP
-                </div>
+                <div class="price" id="precio-detalle-servicio"></div>
             </div>
 
         </div>
@@ -72,5 +69,7 @@
             © 2025 DigitalCore Solutions.
         </div>
     </footer>
+
+    <script src="js/detalle-servicio.js"></script>
 </body>
 </html>
