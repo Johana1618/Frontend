@@ -24,18 +24,44 @@ document.querySelector('.login-form').addEventListener('submit', async function(
     botonCambiar.disabled = true;
     
     try {
-        const response = await fetch('data/usuario.json');
-        
-        if (!response.ok) {
-            throw new Error('Error al cargar los datos');
+        // SIEMPRE usar localStorage como fuente principal
+        let usuario;
+        const storedData = localStorage.getItem('usuario');
+        if (storedData) {
+            usuario = JSON.parse(storedData);
+            console.log('Datos cargados desde localStorage (fuente principal):', usuario);
+        } else {
+            // Solo cargar desde JSON la primera vez
+            try {
+                const response = await fetch('data/usuario.json');
+                if (response.ok) {
+                    usuario = await response.json();
+                    console.log('Primera carga desde JSON:', usuario);
+                } else {
+                    throw new Error('No se pudo cargar JSON');
+                }
+            } catch (error) {
+                // Fallback si no se puede cargar JSON
+                usuario = {
+                    "usuario": "admin",
+                    "contraseña": "1234",
+                    "auth": false
+                };
+                console.log('Usando datos por defecto:', usuario);
+            }
+            // Guardar en localStorage para que sea la fuente principal
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+            console.log('Datos guardados en localStorage como fuente principal');
         }
-        
-        const data = await response.json();
-        
-        // Simular cambio exitoso (actualiza la contraseña del usuario admin)
-        console.log('Contraseña anterior:', data.contraseña);
-        console.log('Contraseña nueva:', nuevaPassword);
-        
+
+        // Actualizar la contraseña
+        usuario.contraseña = nuevaPassword;
+
+        // Guardar de vuelta en localStorage (fuente principal permanente)
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+
+        console.log('Contraseña actualizada exitosamente en localStorage (fuente principal)');
+
         alert('¡Contraseña cambiada exitosamente!');
         
         // Limpiar formulario

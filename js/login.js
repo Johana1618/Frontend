@@ -131,18 +131,45 @@ document.querySelector('.login-form').addEventListener('submit', async function(
     }
     
     try {
-        console.log('Cargando JSON...');
-        const response = await fetch('data/usuario.json');
-        
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);
+        console.log('Cargando datos de usuario...');
+        let data;
+
+        // SIEMPRE usar localStorage como fuente principal
+        const storedData = localStorage.getItem('usuario');
+        if (storedData) {
+            data = JSON.parse(storedData);
+            console.log('Datos cargados desde localStorage (fuente principal):', data);
+        } else {
+            // Solo cargar desde JSON la primera vez
+            try {
+                const response = await fetch('data/usuario.json');
+                if (response.ok) {
+                    data = await response.json();
+                    console.log('Primera carga desde JSON:', data);
+                } else {
+                    throw new Error('No se pudo cargar JSON');
+                }
+            } catch (error) {
+                // Fallback si no se puede cargar JSON
+                data = {
+                    "usuario": "admin",
+                    "contraseña": "1234",
+                    "auth": false
+                };
+                console.log('Usando datos por defecto:', data);
+            }
+            // Guardar en localStorage para que sea la fuente principal
+            localStorage.setItem('usuario', JSON.stringify(data));
+            console.log('Datos guardados en localStorage como fuente principal');
         }
-        
-        const data = await response.json();
-        console.log('Datos cargados:', data);
-        
+
         // Verificar credenciales
         if (data.usuario === usuario && data.contraseña === contraseña) {
+            // Actualizar el campo auth a true
+            data.auth = true;
+            localStorage.setItem('usuario', JSON.stringify(data));
+            console.log('Auth actualizado a true:', data);
+            
             // Limpiar campos inmediatamente
             document.getElementById('usuario').value = '';
             document.getElementById('contraseña').value = '';
