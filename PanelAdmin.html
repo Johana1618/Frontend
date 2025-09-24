@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigitalCore Solutions</title>
     <link rel="stylesheet" href="styles/panelAdmin.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <img src="images/logo.png" alt="DigitalCore Logo">
-            DigitalCore Solutions
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="DigitalCore Logo">
+                DigitalCore Solutions
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicio.html">Servicios</a></li>
+                <li><a href="#" id="cerrarSesion">Cerrar sesión</a></li>
+                <li class="large-icon">⍈</li>
+            </ul>
         </div>
-        <ul class="nav-menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicio.html">Servicios</a></li>
-            <li><a href="#" id="cerrarSesion">Cerrar sesión</a></li>
-            <li class="large-icon">⍈</li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -31,13 +33,14 @@
             <!-- Top Bar -->
             <div class="top-bar">
                 <div class="search-container">
-                    <input type="text" placeholder="Buscar Servicios..." class="search-input">
-                    <button class="search-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <input type="text" placeholder="Buscar Servicios..." class="search-input" id="buscadorServicios">
+                    <span class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
-                    </button>
+                    </span>
                 </div>
                 <button class="create-btn">Crear servicio</button>
             </div>
@@ -57,174 +60,61 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>
-                                <div class="service-icon laptop">💻</div>
-                            </td>
-                            <td>Desarrollo web</td>
-                            <td>$2,500,000</td>
-                            <td>15</td>
-                            <td>
-                                <label class="toggle">
-                                    <input type="checkbox" checked>
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>5%</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>
-                                <div class="service-icon mobile">📱</div>
-                            </td>
-                            <td>Apps Móviles</td>
-                            <td>$3,200,000</td>
-                            <td>10</td>
-                            <td>
-                                <label class="toggle">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>0</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>
-                                <div class="service-icon cloud">☁️</div>
-                            </td>
-                            <td>Cloud Computing</td>
-                            <td>$1,800,000</td>
-                            <td>5</td>
-                            <td>
-                                <label class="toggle active">
-                                    <input type="checkbox" checked>
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>5%</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>004</td>
-                            <td>
-                                <div class="service-icon security">🔒</div>
-                            </td>
-                            <td>Ciberseguridad</td>
-                            <td>$2,000,000</td>
-                            <td>3</td>
-                            <td>
-                                <label class="toggle active">
-                                    <input type="checkbox" checked>
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>5%</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>005</td>
-                            <td>
-                                <div class="service-icon analytics">📊</div>
-                            </td>
-                            <td>Business Intelligence</td>
-                            <td>$2,800,000</td>
-                            <td>4</td>
-                            <td>
-                                <label class="toggle">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>0</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>006</td>
-                            <td>
-                                <div class="service-icon ai">🤖</div>
-                            </td>
-                            <td>Inteligencia Artificial</td>
-                            <td>$4,800,000</td>
-                            <td>7</td>
-                            <td>
-                                <label class="toggle">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>0</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>007</td>
-                            <td>
-                                <div class="service-icon ecommerce">🌐</div>
-                            </td>
-                            <td>E - commerce</td>
-                            <td>$3,500,000</td>
-                            <td>8</td>
-                            <td>
-                                <label class="toggle">
-                                    <input type="checkbox">
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                            <td>0</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="action-btn edit">📝</button>
-                                    <button class="action-btn delete">🗑️</button>
-                                </div>
-                            </td>
-                        </tr>
-                        
+                    <tbody class="tr-servicios">
+
                     </tbody>
                 </table>
-               
+
             </div>
-             <!-- Services Counter -->
-                <div class="services-counter">
-                    <span class="counter-text">Total de servicios:  07</span>
-                </div>
-        </div> 
-       
-        
+            <!-- Services Counter -->
+            <div class="services-counter">
+                <span class="counter-text">Total de servicios: </span><span class="counter-text"
+                    id="totalServicios"></span>
+            </div>
+        </div>
+
+        <!-- Modal Crear/Editar Servicio -->
+        <div id="modalServicio" class="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Crear servicio</h2>
+                <form id="formServicio" class="form-servicio">
+
+                    <div class="form-group">
+                        <label for="tituloInput">Título</label>
+                        <input type="text" id="tituloInput" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcionInput">Descripción</label>
+                        <textarea id="descripcionInput" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cantidadInput">Cantidad</label>
+                        <input type="text" id="cantidadInput" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="precioInput">Precio</label>
+                        <input type="text" id="precioInput" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagenInput">Imagen (emoji)</label>
+                        <input type="text" id="imagenInput">
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" id="cancelarBtn" class="btn btn-cancel">Cancelar</button>
+                        <button type="submit" id="guardarBtn" class="btn btn-save">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
     </main>
     <script src="js/panelAdmin.js"></script>
 </body>
+
 </html>

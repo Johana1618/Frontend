@@ -1,4 +1,5 @@
 {
     "usuario": "admin", 
-    "contraseña": "1234"
+    "contraseña": "1234",
+    "auth": false
 }

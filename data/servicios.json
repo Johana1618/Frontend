@@ -3,76 +3,86 @@
     "descripcion": "Descubre todas las soluciones tecnológicas que ofrecemos",
     "servicios": [
         {
+            "id":"001",
             "titulo": "Desarrollo web",
             "promocion": true,
             "descripcion": "Desarrollo completo de aplicaciones web modernas utilizando las últimas tecnologías.Incluye diseño responsivo, backend robusto, base de datos optimizada y despliegue en la nube. Perfecto para empresas que buscan digitalizar sus procesos.",
             "cantidad": "15 servicios",
-            "precio": "$2,500,000",
+            "precio": "2.500.000",
             "imagen": "💻"
         },
         {
+            "id":"002",
             "titulo": "Apps Móviles",
             "promocion": false,
             "descripcion": "Desarrollo de aplicaciones nativas y multiplataforma para iOS y Android.Incluye diseño de interfaces, programación, integración con APIs, testing, publicación en stores y actualizaciones.",
             "cantidad": "10 servicios",
-            "precio": "$3,800,000",
+            "precio": "3.800.000",
             "imagen": "📱"
         },
         {
+            "id":"003",
             "titulo": "Cloud Computing",
             "promocion": false,
             "descripcion": "Servicios de migración a la nube, configuración de infraestructura cloud (AWS, Azure, Google Cloud),administración de servidores virtuales, backup automático y escalabilidad de recursos.",
             "cantidad": "5 servicios",
-            "precio": "$4,500,000",
+            "precio": "4.500.000",
             "imagen": "☁️"
         },{
+            "id":"004",
             "titulo": "ciberseguridad",
             "promocion": false,
             "descripcion": "Servicios de ciberseguridad para proteger la información y los sistemas de las empresas. Incluye auditorías de seguridad, pruebas de penetración, formación y concienciación, y gestión de incidentes.",
             "cantidad": "5 servicios",
-            "precio": "$2,000,000",
+            "precio": "2.000.000",
             "imagen": "🔒"
         },{
+            "id":"005",
             "titulo": "bussiness intelligence",
             "promocion": false,
             "descripcion": "Implementación de medidas de seguridad informática, auditorías de vulnerabilidades,configuración de firewalls, antivirus empresarial, cifrado de datos y capacitación en seguridad digital.",
             "cantidad": "4 servicios",
-            "precio": "$3,800,000",
+            "precio": "3.800.000",
             "imagen": "📊"
         },{
+            "id":"006",
             "titulo": "Inteligencia Artificial",
             "promocion": false,
             "descripcion": "Desarrollo de soluciones con IA, chatbots inteligentes, análisis predictivo, automatización de procesos, machine learning y implementación de algoritmos personalizados.",
             "cantidad": "7 servicios",
-            "precio": "$4,800,000",
+            "precio": "4.800.000",
             "imagen": "🤖"
         },{
+            "id":"007",
             "titulo": "E - commerce",
             "promocion": false,
             "descripcion": "Creación de tiendas online completas, integración de pasarelas de pago, gestión de inventarios, marketing digital para ventas y optimización de conversiones.",
             "cantidad": "7 servicios",
-            "precio": "$3,500,000",
+            "precio": "3.500.000",
             "imagen": "🌐"
         },{
+            "id":"008",
             "titulo": "Backup Recuperación",
             "promocion": true,
             "descripcion": "Sistemas de respaldo automático, recuperación ante desastres, copias de seguridad en la nube, planes de continuidad del negocio y restauración de datos.",
             "cantidad": "2 servicios",
-            "precio": "$1,200,000",
+            "precio": "1.200.000",
             "imagen": "💾"
         },{
+            "id":"009",
             "titulo": "Marketing Digital",
             "promocion": false,
             "descripcion": "Estrategias de marketing online, gestión de redes sociales, publicidad digital (Google Ads, Facebook Ads), SEO/SEM, email marketing y análisis de métricas.",
             "cantidad": "4 servicios",
-            "precio": "$1,900,000",
+            "precio": "1.900.000",
             "imagen": "🎯"
         },{
+            "id":"010",
             "titulo": "Consultoría TI",
             "promocion": false,
             "descripcion": "Asesoramiento tecnológico estratégico, evaluación de infraestructura IT, planes de transformación digital, auditorías tecnológicas y recomendaciones de mejora.",
             "cantidad": "4 servicios",
-            "precio": "$2,100,000",
+            "precio": "2.100.000",
             "imagen": "⚙️"
         }
         
