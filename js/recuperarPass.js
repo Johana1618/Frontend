@@ -6,17 +6,32 @@ document.querySelector('.login-form').addEventListener('submit', async function(
     const botonCambiar = document.querySelector('.login-button');
     
     if (!nuevaPassword || !confirmarPassword) {
-        alert('Por favor, complete todos los campos');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos vacíos',
+            text: 'Por favor, complete todos los campos',
+            confirmButtonColor: '#3085d6'
+        });
         return;
     }
     
     if (nuevaPassword !== confirmarPassword) {
-        alert('Las contraseñas no coinciden');
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Las contraseñas no coinciden',
+            confirmButtonColor: '#3085d6'
+        });
         return;
     }
     
     if (nuevaPassword.length < 4) {
-        alert('La contraseña debe tener al menos 4 caracteres');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Contraseña muy corta',
+            text: 'La contraseña debe tener al menos 4 caracteres',
+            confirmButtonColor: '#3085d6'
+        });
         return;
     }
     
@@ -62,18 +77,27 @@ document.querySelector('.login-form').addEventListener('submit', async function(
 
         console.log('Contraseña actualizada exitosamente en localStorage (fuente principal)');
 
-        alert('¡Contraseña cambiada exitosamente!');
-        
-        // Limpiar formulario
-        document.getElementById('usuario').value = '';
-        document.getElementById('contraseña').value = '';
-        
-        setTimeout(() => {
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: '¡Contraseña cambiada exitosamente!',
+            confirmButtonColor: '#3085d6',
+            timer: 1500,
+            showConfirmButton: false
+        }).then(() => {
+            // Limpiar formulario
+            document.getElementById('usuario').value = '';
+            document.getElementById('contraseña').value = '';
             window.location.href = 'login.html';
-        }, 1500);
+        });
         
     } catch (error) {
-        alert('Error al cambiar la contraseña. Intente nuevamente.');
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al cambiar la contraseña. Intente nuevamente.',
+            confirmButtonColor: '#3085d6'
+        });
         console.error('Error:', error);
     } finally {
         setTimeout(() => {

@@ -163,9 +163,27 @@ document.addEventListener('DOMContentLoaded', function () {
             const fila = e.target.closest('tr');
             const servicioId = fila.getAttribute("data-id");
 
-            if (confirm(`¿Seguro que deseas eliminar el servicio con ID ${servicioId}?`)) {
-                eliminarServicio(servicioId, fila);
-            }
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: `¿Deseas eliminar el servicio con ID ${servicioId}?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarServicio(servicioId, fila);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Eliminado',
+                        text: 'El servicio ha sido eliminado correctamente',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: '#3085d6'
+                    });
+                }
+            });
         }
     });
 
@@ -292,11 +310,91 @@ document.addEventListener('DOMContentLoaded', function () {
                 : JSON.parse(localStorage.getItem('servicios')).servicios.find(s => s.id === nuevoId).promocion
         };
 
+        try {
+            if (modo === "crear") {
+                serviciosData.servicios.push(nuevoServicio);
+                localStorage.setItem('servicios', JSON.stringify(serviciosData));
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Servicio Creado',
+                    text: 'El servicio ha sido creado exitosamente',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#3085d6'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        modal.classList.remove('show');
+                        cargarServicios(); // Recargar la lista de servicios
+                    }
+                });
+            } else {
+                const index = serviciosData.servicios.findIndex(s => s.id === servicioEditandoId);
+                serviciosData.servicios[index] = nuevoServicio;
+                localStorage.setItem('servicios', JSON.stringify(serviciosData));
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Servicio Actualizado',
+                    text: 'El servicio ha sido actualizado exitosamente',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#3085d6'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        modal.classList.remove('show');
+                        cargarServicios(); // Recargar la lista de servicios
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hubo un error al procesar la operación',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#dc3545'
+            });
+        }
+
+        // Guardar en localStorage
         if (modo === "crear") {
             serviciosData.servicios.push(nuevoServicio);
+            Swal.fire({
+                icon: 'success',
+                title: 'Servicio Creado',
+                text: 'El servicio ha sido creado exitosamente',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
         } else {
             const index = serviciosData.servicios.findIndex(s => s.id === servicioEditandoId);
             serviciosData.servicios[index] = nuevoServicio;
+            Swal.fire({
+                icon: 'success',
+                title: 'Servicio Actualizado',
+                text: 'El servicio ha sido actualizado exitosamente',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
+        }
+
+        if (modo === "crear") {
+            serviciosData.servicios.push(nuevoServicio);
+            Swal.fire({
+                icon: 'success',
+                title: 'Servicio Creado',
+                text: 'El servicio se ha creado exitosamente',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
+        } else {
+            const index = serviciosData.servicios.findIndex(s => s.id === servicioEditandoId);
+            serviciosData.servicios[index] = nuevoServicio;
+            Swal.fire({
+                icon: 'success',
+                title: 'Servicio Actualizado',
+                text: 'El servicio se ha actualizado exitosamente',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
         }
 
         localStorage.setItem('servicios', JSON.stringify(serviciosData));
