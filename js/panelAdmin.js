@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Eliminar servicio
+    // Eliminar servicio con alerta
     serviciosContainer.addEventListener('click', function (e) {
         if (e.target && e.target.classList.contains('delete')) {
             const fila = e.target.closest('tr');
@@ -313,34 +313,22 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             if (modo === "crear") {
                 serviciosData.servicios.push(nuevoServicio);
-                localStorage.setItem('servicios', JSON.stringify(serviciosData));
                 Swal.fire({
                     icon: 'success',
                     title: 'Servicio Creado',
                     text: 'El servicio ha sido creado exitosamente',
                     confirmButtonText: 'OK',
                     confirmButtonColor: '#3085d6'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        modal.classList.remove('show');
-                        cargarServicios(); // Recargar la lista de servicios
-                    }
                 });
             } else {
                 const index = serviciosData.servicios.findIndex(s => s.id === servicioEditandoId);
                 serviciosData.servicios[index] = nuevoServicio;
-                localStorage.setItem('servicios', JSON.stringify(serviciosData));
                 Swal.fire({
                     icon: 'success',
                     title: 'Servicio Actualizado',
                     text: 'El servicio ha sido actualizado exitosamente',
                     confirmButtonText: 'OK',
                     confirmButtonColor: '#3085d6'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        modal.classList.remove('show');
-                        cargarServicios(); // Recargar la lista de servicios
-                    }
                 });
             }
         } catch (error) {
@@ -351,49 +339,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Hubo un error al procesar la operación',
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#dc3545'
-            });
-        }
-
-        // Guardar en localStorage
-        if (modo === "crear") {
-            serviciosData.servicios.push(nuevoServicio);
-            Swal.fire({
-                icon: 'success',
-                title: 'Servicio Creado',
-                text: 'El servicio ha sido creado exitosamente',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#3085d6'
-            });
-        } else {
-            const index = serviciosData.servicios.findIndex(s => s.id === servicioEditandoId);
-            serviciosData.servicios[index] = nuevoServicio;
-            Swal.fire({
-                icon: 'success',
-                title: 'Servicio Actualizado',
-                text: 'El servicio ha sido actualizado exitosamente',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#3085d6'
-            });
-        }
-
-        if (modo === "crear") {
-            serviciosData.servicios.push(nuevoServicio);
-            Swal.fire({
-                icon: 'success',
-                title: 'Servicio Creado',
-                text: 'El servicio se ha creado exitosamente',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#3085d6'
-            });
-        } else {
-            const index = serviciosData.servicios.findIndex(s => s.id === servicioEditandoId);
-            serviciosData.servicios[index] = nuevoServicio;
-            Swal.fire({
-                icon: 'success',
-                title: 'Servicio Actualizado',
-                text: 'El servicio se ha actualizado exitosamente',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#3085d6'
             });
         }
 
